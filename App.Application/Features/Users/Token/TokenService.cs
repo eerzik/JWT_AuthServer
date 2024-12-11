@@ -1,7 +1,9 @@
 ﻿using App.Application.Features.Users.Authentication.Dtos;
+using App.Application.Features.Users.Users.Dtos;
 using App.Domain.Entities.Identity;
 using App.Domain.Options;
 using App.Persistence.Authentication.Configurations;
+using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -80,7 +82,6 @@ public class TokenService(IOptions<CustomTokenOption> options) : ITokenService
             AccessTokenExpiration = accessTokenExpiration,
             RefreshTokenExpiration = refreshTokenExpiration
         };
-
         return tokenDto;
     }
 

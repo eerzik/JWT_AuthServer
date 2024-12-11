@@ -1,5 +1,6 @@
 ﻿using App.Application.Features.Users.Authentication;
 using App.Application.Features.Users.Token;
+using App.Application.Features.Users.Users;
 using App.Domain.Entities.Identity;
 using App.Domain.Options;
 using App.Persistence.Authentication.Configurations;
@@ -24,17 +25,17 @@ public static class ServiceExtensions
 
         services.AddScoped<IAuthenticationService, AuthenticationService>();
         services.AddScoped<ITokenService, TokenService>();
-
+        services.AddScoped<IUserService, UserService>();
 
         //Bussiness Validation 3. yolu kullanmak için otomatik validasyonu kapatmamız gerekiyor. Bunun yerine kendimiz manuel yazacağız.
-         services.AddFluentValidationAutoValidation();
+        services.AddFluentValidationAutoValidation();
         //Çalıştığı assembly i verebiliriz.
         services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 
 
-        
+
 
 
 

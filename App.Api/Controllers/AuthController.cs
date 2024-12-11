@@ -24,21 +24,21 @@ namespace App.Api.Controllers
             return CreateActionResult(result);
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> RevokeRefreshToken(RefreshTokenDto refreshTokenDto)
-        //{
-        //    var result = await _authenticationService.RevokeRefreshToken(refreshTokenDto.Token);
+        [HttpPost]
+        public async Task<IActionResult> RevokeRefreshToken(RefreshTokenDto refreshTokenDto)
+        {
+            var result = await _authenticationService.RevokeRefreshToken(refreshTokenDto.Token);
 
-        //    return CreateActionResult(result);
-        //}
+            return CreateActionResult(result);
+        }
 
-        //[HttpPost]
-        //public async Task<IActionResult> CreateTokenByRefreshToken(RefreshTokenDto refreshTokenDto)
+        [HttpPost]
+        public async Task<IActionResult> CreateTokenByRefreshToken(RefreshTokenDto refreshTokenDto)
 
-        //{
-        //    var result = await _authenticationService.CreateTokenByRefreshToken(refreshTokenDto.Token);
+        {
+            var result = await _authenticationService.CreateTokenByRefreshToken(refreshTokenDto.Token);
 
-        //    return CreateActionResult(result);
-        //}
+            return CreateActionResult(result);
+        }
     }
 }
